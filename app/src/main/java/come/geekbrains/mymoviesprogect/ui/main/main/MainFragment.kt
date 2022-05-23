@@ -10,9 +10,11 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import come.geekbrains.mymoviesprogect.R
 import come.geekbrains.mymoviesprogect.databinding.MainFragmentBinding
+import come.geekbrains.mymoviesprogect.model.Movie
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
+
 
     private val viewModel: MainViewModel by viewModel()
     private var _binding: MainFragmentBinding? = null
@@ -41,6 +43,11 @@ class MainFragment : Fragment() {
         _binding = null
     }
 
+    interface OnItemViewClickListener {
+
+        fun onItemViewClick(movie: Movie)
+
+    }
 
     companion object {
         fun newInstance() = MainFragment()
